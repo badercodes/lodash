@@ -52,9 +52,38 @@ const _ = {
     // codecademy solution
     // return str.split(" ");
   },
+  pad(str, num) {
+    let returnStr = "";
+
+    let numOfSpaces = num - str.length;
+
+    if (numOfSpaces <= 0) return str;
+    let spaces;
+    let isOdd = numOfSpaces % 2;
+    if (isOdd) {
+      spaces = Math.floor(numOfSpaces / 2);
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+      returnStr += str;
+      for (let i = 0; i < spaces + 1; i++) {
+        returnStr += " ";
+      }
+    } else {
+      let spaces = numOfSpaces / 2;
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+      returnStr += str;
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+    }
+    return returnStr;
+  },
 };
 
-console.log(_.words("Hello there the angel, from my her nightmare"));
+console.log(_.pad("hi", 20));
 
 // Do not write or modify code below this line.
 module.exports = _;
