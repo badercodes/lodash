@@ -53,43 +53,43 @@ const _ = {
     // return str.split(" ");
   },
   pad(str, num) {
-    // let returnStr = "";
+    let returnStr = "";
 
-    // let numOfSpaces = num - str.length;
+    let numOfSpaces = num - str.length;
 
-    // if (numOfSpaces <= 0) return str;
-    // let spaces;
-    // let isOdd = numOfSpaces % 2;
-    // if (isOdd) {
-    //   spaces = Math.floor(numOfSpaces / 2);
-    //   for (let i = 0; i < spaces; i++) {
-    //     returnStr += " ";
-    //   }
-    //   returnStr += str;
-    //   for (let i = 0; i < spaces + 1; i++) {
-    //     returnStr += " ";
-    //   }
-    // } else {
-    //   let spaces = numOfSpaces / 2;
-    //   for (let i = 0; i < spaces; i++) {
-    //     returnStr += " ";
-    //   }
-    //   returnStr += str;
-    //   for (let i = 0; i < spaces; i++) {
-    //     returnStr += " ";
-    //   }
-    // }
-    // return returnStr;
+    if (numOfSpaces <= 0) return str;
+    let spaces;
+    let isOdd = numOfSpaces % 2;
+    if (isOdd) {
+      spaces = Math.floor(numOfSpaces / 2);
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+      returnStr += str;
+      for (let i = 0; i < spaces + 1; i++) {
+        returnStr += " ";
+      }
+    } else {
+      let spaces = numOfSpaces / 2;
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+      returnStr += str;
+      for (let i = 0; i < spaces; i++) {
+        returnStr += " ";
+      }
+    }
+    return returnStr;
 
     // codecademy solution
-    if (str.length >= num) return str;
-    let leadingSpaces = Math.floor((num - str.length) / 2);
-    let endingSpaces = num - leadingSpaces - str.length;
-    let space = " ";
-    let returnString = space.repeat(leadingSpaces);
-    returnString += str;
-    returnString += space.repeat(endingSpaces);
-    return returnString;
+    // if (str.length >= num) return str;
+    // let leadingSpaces = Math.floor((num - str.length) / 2);
+    // let endingSpaces = num - leadingSpaces - str.length;
+    // let space = " ";
+    // let returnString = space.repeat(leadingSpaces);
+    // returnString += str;
+    // returnString += space.repeat(endingSpaces);
+    // return returnString;
   },
 };
 
