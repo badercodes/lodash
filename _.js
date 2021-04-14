@@ -5,14 +5,14 @@ const _ = {
     // else return lowest bound
 
     // my solution
-    // if (arg <= higher && arg >= lower) return arg;
+    if (arg <= higher && arg >= lower) return arg;
 
-    // if (arg > higher) return higher;
-    // else return lower;
+    if (arg > higher) return higher;
+    else return lower;
 
     // solution suggested by codecademy
-    let lowerClampedValue = Math.max(arg, lower);
-    return Math.min(lowerClampedValue, higher);
+    // let lowerClampedValue = Math.max(arg, lower);
+    // return Math.min(lowerClampedValue, higher);
   },
   inRange(number, start, end) {
     // ideating - first check if end is supplied - if so do operations
@@ -45,13 +45,16 @@ const _ = {
         temp = "";
       }
     }
-    // last word will be in temp and loop won't run again
+    // // last word will be in temp and loop won't run again
     if (temp.length > 0) returnArr.push(temp);
     return returnArr;
+
+    // codecademy solution
+    // return str.split(" ");
   },
 };
 
-console.log(_.words("Hello there the angel, from my nightmare"));
+console.log(_.words("Hello there the angel, from my her nightmare"));
 
 // Do not write or modify code below this line.
 module.exports = _;
