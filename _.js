@@ -34,9 +34,24 @@ const _ = {
     // assuming start provided is NEGATIVE
     else return number < 0 && number >= start;
   },
+  words(str) {
+    // my solution without using helper or built in JS funcs
+    let temp = "";
+    const returnArr = [];
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] !== " ") temp += str[i];
+      else {
+        returnArr.push(temp);
+        temp = "";
+      }
+    }
+    // last word will be in temp and loop won't run again
+    if (temp.length > 0) returnArr.push(temp);
+    return returnArr;
+  },
 };
 
-console.log(_.inRange(3, 7, 2));
+console.log(_.words("Hello there the angel, from my nightmare"));
 
 // Do not write or modify code below this line.
 module.exports = _;
