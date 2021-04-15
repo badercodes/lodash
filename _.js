@@ -91,6 +91,39 @@ const _ = {
     // returnString += space.repeat(endingSpaces);
     // return returnString;
   },
+  has(obj, key) {
+    // ideating - check if there's a value at obj[key]
+    // if has then return true - otherwise return false
+    // can do implicit truthy/falsy return due to possibility
+    // of returning undefined.
+    if (obj[key]) return true;
+    else return false;
+  },
+  invert(obj) {
+    // ideating - will utilize an Objects method to destructure
+    // object then reverse the values to key and keys to values
+    // then I will delete original keys.
+    let returnObj = {};
+    for (const [key, value] of Object.entries(obj)) {
+      returnObj[value] = key;
+    }
+    return returnObj;
+  },
+  findKey(obj, func) {
+    // ideating - grab the names of the keys using Object.keys
+    // pass object with the key to function passed
+    // return truth if truthy or falsy otherwise
+    let found;
+    const testingObject = {
+      monitors: { brand: "Samsung", price: "$20" },
+      harddrives: { make: "Western Digital", price: "25" },
+    };
+    for (const item of Object.keys(obj)) {
+      console.log(item);
+      if (func(obj[item])) return item;
+    }
+    return found;
+  },
 };
 
 // Do not write or modify code below this line.
