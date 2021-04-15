@@ -113,11 +113,20 @@ const _ = {
     // ideating - grab the names of the keys using Object.keys
     // pass object with the key to function passed
     // return truth if truthy or falsy otherwise
-    let found;
-    for (const item of Object.keys(obj)) {
+
+    // my solution
+    // let found;
+    // for (const item of Object.keys(obj)) {
+    //   if (func(obj[item])) return item;
+    // }
+    // return found;
+
+    // codecademy solution
+    for (const item in obj) {
+      console.log(item);
       if (func(obj[item])) return item;
     }
-    return found;
+    return undefined;
   },
 };
 
