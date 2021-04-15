@@ -115,7 +115,6 @@ const _ = {
     // return truth if truthy or falsy otherwise
     let found;
     for (const item of Object.keys(obj)) {
-      console.log(item);
       if (func(obj[item])) return item;
     }
     return found;
