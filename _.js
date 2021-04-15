@@ -114,10 +114,6 @@ const _ = {
     // pass object with the key to function passed
     // return truth if truthy or falsy otherwise
     let found;
-    const testingObject = {
-      monitors: { brand: "Samsung", price: "$20" },
-      harddrives: { make: "Western Digital", price: "25" },
-    };
     for (const item of Object.keys(obj)) {
       console.log(item);
       if (func(obj[item])) return item;
