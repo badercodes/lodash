@@ -128,6 +128,16 @@ const _ = {
     }
     return undefined;
   },
+  drop(arr, num) {
+    // ideating - check if num doesnt exist then slice 1 and return
+    // if num exists - check if its  bigger than or === arr length
+    // in that case return empty array - otherwise slice array by num
+
+    if (!num) return arr.slice(1);
+    if (num >= arr.length) return [];
+
+    return arr.slice(num);
+  },
 };
 
 // Do not write or modify code below this line.
