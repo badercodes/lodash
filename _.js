@@ -134,7 +134,6 @@ const _ = {
     // in that case return empty array - otherwise slice array by num
 
     if (!num) return arr.slice(1);
-    if (num >= arr.length) return [];
 
     return arr.slice(num);
   },
