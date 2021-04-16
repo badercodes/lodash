@@ -137,6 +137,18 @@ const _ = {
 
     return arr.slice(num);
   },
+  dropWhile(arr, func) {
+    // ideating - run a classic for loop through each element of array
+    // keep running predicate and passing it the 3 required parameters
+    // once predicate function retruns falsey - get out of the loop
+    // use index of loop to slice the array and return it
+    // slice doesn't mutate so I can return arr.slice(x);
+    let i;
+    for (i = 0; i < arr.length; i++) {
+      if (!func(arr[i], i, arr)) break;
+    }
+    return arr.slice(i);
+  },
 };
 
 // Do not write or modify code below this line.
