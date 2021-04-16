@@ -149,6 +149,43 @@ const _ = {
     }
     return arr.slice(i);
   },
+  chunk(arr, size) {
+    // ideating - first check size if doesn't exist - set it to 1
+    // instead of using Modulus - I'll use what they used previously
+    // by invoking Math.floor() on division to get integer division and use
+    // length - (chunks * lengthOfChunk) to get remainder chunk
+    // Then I need to run a nested loop structure to iterate through main array
+    // then sub-iterate through smaller chunk array and push it to main array
+    // this thereby creates an array of arrays
+    // lastly, I need to handle the extra's due to uneven division
+
+    if (!size) size = 1;
+    let chunkLength = Math.floor(arr.length / size);
+    let subTotal = chunkLength * size;
+    let remainder = arr.length - subTotal;
+    let temp = [];
+    let returnArr = [];
+    let i = 0;
+    let j;
+
+    while (i < subTotal) {
+      for (j = 0; j < chunkLength; j++) {
+        temp.push(arr[i]);
+        i++;
+      }
+      returnArr.push(temp);
+      temp = [];
+    } //close while
+
+    if (remainder > 0) {
+      while (i < arr.length) {
+        temp.push(arr[i]);
+        i++;
+      }
+      returnArr.push(temp);
+    }
+    return returnArr;
+  },
 };
 
 // Do not write or modify code below this line.
